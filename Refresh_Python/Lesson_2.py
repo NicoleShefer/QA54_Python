@@ -1,113 +1,127 @@
-#Task 1. Shopping cart
-"""
-def clean_cart(cart):
-  if not isinstance(cart, list):
-    raise TypeError("Argument 'cart' should be a (list)")
+for ch in "banana":
+    print(ch)
+print()
 
-  for item in cart:
-    if not isinstance(item, str):
-      raise TypeError(
-          f"All the elements should be a string. There is found another type: {type(item).__name__}"
-      )
+#range(start,stop,step)
 
-  if not cart:
-    return []
+for i in range(3): # 0,1,2
+    print(i)
+print()
 
-  while "sold out" in cart:
-    cart.remove("sold out")
+for i in range(2,5): # 2,3,4
+    print(i)
+print()
 
-  return cart
+for i in range(2,13,2): # 2,4,6,8,10,12
+    print(i)
+print()
 
+count = 0
 
-print(clean_cart(["milk", "sold out", "bread", "sold out", "coffee"]))
-print(clean_cart(["milk", 123, "bread"]))
-print(clean_cart({"item": "milk"}))
+while count<3:
+    print(count)
+    count+=1
 
-#======================================================
+from audioop import reverse
 
-# Task 2. Temperature report
+from Lessib1_remember.HW_1 import result
 
-def temperature_report(temperatures):
-  if not isinstance(temperatures, list):
-    raise TypeError("Аргумент должен быть списком (list)")
+fruits = ["apple", "banana", "orange"]
 
-  result = []
-
-  for temp in temperatures:
-    if not isinstance(temp, (int, float)):
-      raise TypeError(
-          f"All the elements should be an int. Type found: {type(temp).__name__}"
-      )
-
-    if not (-60 <= temp <= 60):
-      raise ValueError(
-          f"Incorrect temperature: {temp}. It should be between -60 and 60°C"
-      )
-
-    if temp > 25:
-      result.append(temp)
-
-  return result
+print(fruits[0])
+print(fruits[-1])
+print(fruits[1:3])
+print(len(fruits))
+fruits[1] = "cat"
+print(fruits)
 
 
-print(temperature_report([21, 28, 19, 31, 25, 27]))
-print(temperature_report([21, 150]))
+#adding methods - append(), insert(), extend()
+fruits.append("kiwi")
+print(fruits)
+#fruits.append(["car", "truck"])
+#print(fruits)
 
-#======================================================
+fruits.extend(["cat", "dog"])
+print(fruits)
 
-#Task 3. Fix negative balances
+fruits.insert(4 ,"pear")
+print(fruits)
 
-def fix_balances(balances):
-    if not isinstance(balances, list):
-        raise TypeError("balances must be a list")
+print()
 
-    for i in range(len(balances)):
-        if isinstance(balances[i], bool) or not isinstance(balances[i], (int, float)):
+#removing methods - remove(), pop(), del, clear()
+e = ["apple", "banana", "orange"]
+e.remove("banana")
+print(e)
+print()
 
-            raise TypeError("all balances must be numbers")
-        if balances[i] < 0:
-            balances[i] = 0
-    return balances
+f = ["apple", "banana", "orange"]
+popped = f.pop(1)
+print(popped, f)
+print()
 
-print(fix_balances([120, -30, 50, -5, 0, 200]))
+h = ["apple", "banana", "orange"]
+del h[0]
+print(h)
+print()
 
-#======================================================
+k = ["apple", "banana", "orange"]
+k.clear()
+print(k)
 
-# Task 4. Remove duplicates without set
+print()
 
-def unique_items(items):
-    if not isinstance(items, list):
-        raise TypeError("items must be a list")
-    result = []
+#search and count methods - index(), count(), in, not in
+m = ["apple", "banana", "cherry", "orange"]
+print(m.index("cherry")) #2
+print(m.count("banana")) #1
+print("apple"in m) #True
+print("kiwi" not in m) #True
 
-    for item in items:
-        if item not in result:
-            result.append(item)
-    return result
+print()
 
-print(unique_items(["red", "blue", "red", "green", "blue"]))
+#sorting methods - sort(), sorted(), reverse()
+numbers = [3,1,5,2,9,6]
+result = numbers.sort()
+print(numbers,result)
 
-#======================================================
+numbers_2 = [3,1,5,2,9,6]
+new_list = sorted(numbers_2)
+print(numbers_2,new_list)
 
-# Task 5. Longest word
+numbers_3 = [3,1,5,2,9,6]
+numbers_3.reverse()
+print(numbers_3)
+print()
 
-def longest_word(words):
-    if not isinstance(words, list):
-        raise TypeError("words must be a list")
-    if len(words) == 0:
-        raise ValueError("words list is empty")
-    for w in words:
-        if not isinstance(w, str):
-            raise TypeError("all elements must be strings")
-    best = words[0]
-    for w in words:
-        if len(w) > len(best):
-            best = w
-    return best
+numbers_4 = [3,1,5,2,9,6]
+print(sorted(numbers_4, reverse=True))
+print(numbers_4)
 
-print(longest_word(["cat", "elephant", "python", "coffee"]))
+print()
 
-"""
+#iterating method
+items = ["apple", "banana", "orange"]
+
+for item in items:
+    print(item)
+
+for i in range(len(items)):
+    print(i,items[i])
+
+print()
+
+numbers_5 = [-2,3,-1,5,0,-9]
+result = []
+for n in numbers_5:
+    if n >0:
+        result.append(n)
+print(result)
+
+
+result2 = [n for n in numbers_5 if n>0]
+print(result2)
 
 
 
