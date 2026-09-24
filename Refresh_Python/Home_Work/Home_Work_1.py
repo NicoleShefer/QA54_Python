@@ -98,15 +98,3 @@ def create_login(first_name, last_name):
 print(create_login(" Anna ", "SMITH"))
 
 """
-
-
-
-
-
-
-
-
-
-
-
-

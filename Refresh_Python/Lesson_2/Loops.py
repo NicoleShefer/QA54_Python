@@ -122,22 +122,3 @@ print(result)
 
 result2 = [n for n in numbers_5 if n>0]
 print(result2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

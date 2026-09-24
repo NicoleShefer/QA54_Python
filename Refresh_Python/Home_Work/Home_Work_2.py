@@ -108,15 +108,3 @@ def longest_word(words):
 print(longest_word(["cat", "elephant", "python", "coffee"]))
 
 """
-
-
-
-
-
-
-
-
-
-
-
-
